@@ -1,0 +1,36 @@
+.btn {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  min-width: 320px;
+  background-color: #ffffff;
+  border: 1px solid rgb(201, 201, 201);
+  color: #202124;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 16px;
+  &:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+  }
+  &:focus {
+    border: 1px solid #1e5ede;
+  }
+  &:disabled,
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #ffffff;
+    &:hover {
+      background-color: #ffffff;
+    }
+  }
+  .icon {
+    margin-right: 8px;
+    margin-top: 2px;
+  }
+  + .btn {
+    margin-top: 8px;
+  }
+}

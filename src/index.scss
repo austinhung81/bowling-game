@@ -1,0 +1,33 @@
+html {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.92);
+}
+
+.upload-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  .title {
+    color: #5f6368;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+  .tip {
+    font-size: 12px;
+    color: #8e8e8e;
+    margin-top: 8px;
+  }
+  .preview-img-container {
+    width: 380px;
+    height: 196px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
