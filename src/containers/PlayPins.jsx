@@ -48,8 +48,8 @@ const PlayPins = props => {
   });
   let pins = 0;
   const activePlayer = state.players[activePlayerIdx];
-  if (rolls && framesCount === 10 && rolls.length === 2 && rolls.reduce((res, curr) => res + curr, 0) >=10) {
-    pins = rolls[0] === 10 ? 10 - rolls[1] : 10;
+  if (rolls && framesCount === 10 && rolls.length === 2 && rolls.reduce((res, curr) => res + curr, 0) >= 10) {
+    pins = rolls[0] === 10 ? (10 - rolls[1] || 10) : 10;
   } else {
     pins = rolls && rolls.length ? (10 - rolls[0] || 10) : 10;
   }
@@ -62,9 +62,9 @@ const PlayPins = props => {
         </div>
       ) : (
         <div>
-          <h1>It&#39;s {activePlayer + '\'s'} turn, Knock down</h1>
+          <h1>{`It's ${activePlayer}'s turn, `} <span className="pins-title">knock down</span></h1>
           <div className="pins-wrapper">
-            {renderPins(activePlayerIdx, pins)} pins
+            {renderPins(activePlayerIdx, pins)} <span>pins</span>
           </div>
         </div>
       )}

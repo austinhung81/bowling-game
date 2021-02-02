@@ -3,7 +3,7 @@ import { BowlingContext } from '../reducers/store';
 
 const Frame = ({ players, frames, ...rest }) => {
   const [state, dispatch] = useContext(BowlingContext);
-  const framesForPlayer = (allFrames, playerIdx, maxFrames) => {
+  const playerFrames = (allFrames, playerIdx, maxFrames) => {
     let frames = allFrames.map((frame) => frame[playerIdx]);
     let numEmptyFrames = maxFrames - frames.length;
     let emptyFrames = Array.from({length: numEmptyFrames}).map(() => []);
@@ -11,7 +11,7 @@ const Frame = ({ players, frames, ...rest }) => {
     return frames.concat(emptyFrames);
   };
 
-  const scoreForPlayer = (frames, maxFrames, maxPins) => {
+  const scoreFrames = (frames, maxFrames, maxPins) => {
     const rolls = [].concat.apply([], frames);
     let multipliers = rolls.slice().map(() => 1);
     let rollIdx = -1;
@@ -34,7 +34,7 @@ const Frame = ({ players, frames, ...rest }) => {
     }, 0);
   };
 
-  const renderFrameCell = (rolls, index) => {
+  const renderFrames = (rolls, index) => {
     const isLastFrame = index === 9;
     const spareOrStrike = rolls.reduce((res, curr) => res + curr, 0) >= 10
     let scores = rolls.map((roll, idx) => {
@@ -73,10 +73,10 @@ const Frame = ({ players, frames, ...rest }) => {
     );
   };
 
-  const renderRow = (player, index) => {
-    let frames = framesForPlayer(state.frames, index, 10);
-    let rolls = frames.map(renderFrameCell);
-    let score = scoreForPlayer(frames, 10, 10);
+  const renderScoreBoard = (player, index) => {
+    let frames = playerFrames(state.frames, index, 10);
+    let rolls = frames.map(renderFrames);
+    let score = scoreFrames(frames, 10, 10);
     return (
       <div className="frame" key={index}>
         <h3>{player}: {score}</h3>
@@ -88,7 +88,7 @@ const Frame = ({ players, frames, ...rest }) => {
   };
   return (
     <div>
-      {players.map(renderRow)}
+      {players.map(renderScoreBoard)}
     </div>
   );
 };
