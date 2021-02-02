@@ -9,6 +9,6 @@ describe('test App component', () => {
   it('should have two buttons', () => {
     expect(true).toEqual(true);
     const buttons = componentInstance.findAllByType('button');
-    expect(buttons.length).toEqual(1);
+    expect(buttons.length).toEqual(3);
   });
 });
