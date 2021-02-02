@@ -1,15 +1,14 @@
 .btn {
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   text-align: center;
   justify-content: center;
-  min-width: 320px;
   background-color: #ffffff;
   border: 1px solid rgb(201, 201, 201);
   color: #202124;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 5px;
-  padding: 16px;
+  padding: 5px;
+  line-height: 20px;
   &:hover {
     cursor: pointer;
     background-color: #f5f5f5;
@@ -29,8 +28,5 @@
   .icon {
     margin-right: 8px;
     margin-top: 2px;
-  }
-  + .btn {
-    margin-top: 8px;
   }
 }

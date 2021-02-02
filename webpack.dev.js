@@ -20,7 +20,7 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    app: './src/index.tsx',
+    app: './src/index.jsx',
   },
   mode: 'development',
   module: {
@@ -33,18 +33,9 @@ module.exports = {
         test: /\.html$/u,
       },
       {
-        test: /\.tsx?$/u,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              configFile: 'tsconfig.json',
-              experimentalFileCaching: true,
-              experimentalWatchApi: true,
-              transpileOnly: true,
-            },
-          },
-        ],
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
       },
       {
         test: /\.scss$/u,
@@ -100,7 +91,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx'],
     mainFields: ['browser', 'module', 'main'],
   },
   watch: true,

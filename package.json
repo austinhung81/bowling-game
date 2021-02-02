@@ -13,24 +13,23 @@
     "start": "webpack-dev-server --config ./webpack.dev.js",
     "prebuild": "rm -rf dist",
     "build": "npm run test && webpack-cli --config ./webpack.prod.js",
-    "test": "jest",
-    "types": "tsc --noEmit"
+    "test": "jest"
   },
   "dependencies": {
-    "@types/react": "^16.8.0",
-    "@types/react-dom": "^16.8.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-icons": "^3.11.0",
+    "react-redux": "^7.2.2",
     "redux": "^4.0.5"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@types/jest": "^25.1.2",
-    "@types/react-test-renderer": "^17.0.0",
-    "@types/webpack-env": "^1.15.1",
     "autoprefixer": "^9.7.4",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
@@ -41,7 +40,7 @@
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^25.1.0",
+    "jest": "^25.5.4",
     "lint-staged": "^10.0.7",
     "mini-css-extract-plugin": "^0.9.0",
     "npm-run-all": "^4.1.5",
@@ -56,9 +55,6 @@
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.0.0",
-    "ts-jest": "^25.2.1",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.5",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
@@ -80,9 +76,6 @@
   "lint-staged": {
     "*.css": [
       "stylelint --fix"
-    ],
-    "*.ts": [
-      "eslint --fix"
     ],
     "*.{css,js,json,md,ts,yaml,yml}": [
       "prettier --write"

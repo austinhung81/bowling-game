@@ -1,11 +1,7 @@
 import React from "react";
 import "./index.scss";
 
-type Props = {
-  [key: string]: any;
-}
-
-const Button = ({ children, ...rest }: Props): JSX.Element => {
+const Button = ({ children, ...rest }) => {
   return (
     <button type="button" className="btn" {...rest}>
       {children}
