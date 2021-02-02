@@ -7,9 +7,8 @@ The app provides you:
 
 1. Correctly calculates bowling scores
 2. Add a variable number of players with names
-3. Manually add scores for each player (so we can test)
-4. Tracks the number of games won for each player
-5. Reset all game stats and start over
+3. Manually add scores for each player
+4. Reset all game stats and start over
 
 To start the project, simply run:
 
